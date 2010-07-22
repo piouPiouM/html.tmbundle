@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby
+
+doc        = STDIN.read
+line       = ENV['TM_LINE_NUMBER'].to_i
+line_index = ENV['TM_LINE_INDEX'].to_i
+
+if ENV.has_key? 'TM_INPUT_START_LINE' then
+  line       = ENV['TM_INPUT_START_LINE'].to_i
+  line_index = ENV['TM_INPUT_START_LINE_INDEX'].to_i
+end
+
+before = /(.*\n){#{line-1}}.{#{line_index}}/.match(doc)[0]
+before.gsub!(/&lt;!--.*?--&gt;/m, '')
+before.reverse!
+
+item = nil
+default_item = %q!&lt;li&gt;${0:$TM_SELECTED_TEXT}&lt;/li&gt;!
+before.scan(/&gt;.*?(?:(?:(\bdesrever\b).*\blo)|\b(l[uo]))\s*&lt;/) do |m|
+  if !m[0].nil? || 'lu' == m[1] then
+    item = default_item
+  elsif 'lo' == m[1] then
+    item = %q!&lt;li${1: value="${2:1}"}&gt;${0:$TM_SELECTED_TEXT}&lt;/li&gt;!
+  end
+
+  if !item.nil?
+    break
+  end
+end
+
+print (item.nil?) ? default_item : item
+</string>
+	<key>input</key>
+	<string>document</string>
+	<key>name</key>
+	<string>List item</string>
+	<key>output</key>
+	<string>insertAsSnippet</string>
+	<key>scope</key>
+	<string>text.html</string>
+	<key>tabTrigger</key>
+	<string>li</string>
+	<key>uuid</key>
+	<string>563E0456-5C7E-4A5D-B2A4-9E81612B015D</string>
+</dict>
+</plist>

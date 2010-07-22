@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>&lt;ol${1: id="${2:name}"}${3:${4: reversed${TM_XHTML/(.+)/(?1:="reversed")/}}${5: start="${6:1}"}}&gt;
+	${0:$TM_SELECTED_TEXT}
+&lt;/ol&gt;</string>
+	<key>name</key>
+	<string>Ordered list</string>
+	<key>scope</key>
+	<string>text.html</string>
+	<key>tabTrigger</key>
+	<string>ol</string>
+	<key>uuid</key>
+	<string>11E1A46C-CEFD-4514-9E9F-4B4813806B43</string>
+</dict>
+</plist>

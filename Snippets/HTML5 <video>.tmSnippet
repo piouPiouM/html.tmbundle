@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>&lt;video${1: id="${2:name}"} src="${3:url}"${4:${5: autoplay${TM_XHTML/(.+)/(?1:="autoplay")/}}${6: controls${TM_XHTML/(.+)/(?1:="controls")/}}${7: loop${TM_XHTML/(.+)/(?1:="loop")/}}${8: preload="${9:none/metadata/auto}"}${10: poster="${11:url}"}}&gt;
+	${0:$TM_SELECTED_TEXT}
+&lt;/video&gt;</string>
+	<key>name</key>
+	<string>Video</string>
+	<key>scope</key>
+	<string>text.html</string>
+	<key>tabTrigger</key>
+	<string>video</string>
+	<key>uuid</key>
+	<string>8CD84589-8AE2-4DF2-A5FD-8E010833ECC9</string>
+</dict>
+</plist>

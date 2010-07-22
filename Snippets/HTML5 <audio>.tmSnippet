@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>&lt;audio${1: id="${2:name}"} src="${3:url}"${4:${5: autoplay${TM_XHTML/(.+)/(?1:="autoplay")/}}${6: controls${TM_XHTML/(.+)/(?1:="controls")/}}${7: loop${TM_XHTML/(.+)/(?1:="loop")/}}${11: preload="${12:none/metadata/auto}"}}&gt;
+	${0:$TM_SELECTED_TEXT}
+&lt;/audio&gt;</string>
+	<key>name</key>
+	<string>Audio</string>
+	<key>scope</key>
+	<string>text.html</string>
+	<key>tabTrigger</key>
+	<string>audio</string>
+	<key>uuid</key>
+	<string>0AAFD94A-662B-4B17-BB4A-8699E78DD139</string>
+</dict>
+</plist>
